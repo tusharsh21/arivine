@@ -34,18 +34,23 @@ This website embodies restraint, silence, and confidence. It doesn't announce it
 
 ```
 /Arivine
-├── index.html          # Semantic HTML structure
-├── styles.css          # Complete design system
-├── script.js           # Performance-optimized interactions
+├── index.html          # Brand story homepage
+├── collection.html     # Product collection page
+├── product.html        # Product detail page
+├── styles.css          # Global design system
+├── catalog.css         # Collection/detail page styling
+├── script.js           # Homepage interactions
+├── products.js         # Shared product data
+├── catalog.js          # Collection/detail rendering logic
 ├── hero-woman.jpg      # Hero section image
-├── collection-1.jpg    # Lumière collection
-├── collection-2.jpg    # Essence collection
-└── collection-3.jpg    # Solitude collection
+├── collection-1.jpg    # Lumière visual
+├── collection-2.jpg    # Essence visual
+└── collection-3.jpg    # Solitude visual
 ```
 
 ## 🚀 Usage
 
-Simply open `index.html` in your browser to experience the full website.
+Open `index.html` in your browser, then use the `Product Collection` link to access the new collection and detail pages.
 
 ## 🎭 Sections
 

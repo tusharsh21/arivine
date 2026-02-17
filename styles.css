@@ -310,6 +310,10 @@ a {
     text-align: center;
 }
 
+.collection-link {
+    display: block;
+}
+
 .collection-image-wrapper {
     width: 100%;
     aspect-ratio: 3/4;
@@ -336,6 +340,34 @@ a {
     font-weight: 300;
     letter-spacing: 2px;
     color: var(--color-ivory);
+    transition: var(--transition-subtle);
+}
+
+.collection-item:hover .collection-name {
+    color: var(--color-gold);
+}
+
+.collection-cta-wrap {
+    margin-top: 72px;
+    text-align: center;
+}
+
+.collection-cta {
+    display: inline-block;
+    padding: 14px 32px;
+    border: 1px solid rgba(201, 169, 97, 0.65);
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    transition: var(--transition-subtle);
+}
+
+.collection-cta:hover {
+    background-color: rgba(201, 169, 97, 0.12);
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -444,6 +476,10 @@ a {
     .collection-grid {
         grid-template-columns: 1fr;
         gap: 60px;
+    }
+
+    .collection-cta-wrap {
+        margin-top: 48px;
     }
     
     .contact-email {
