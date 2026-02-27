@@ -3,75 +3,141 @@
 
     window.ARIVINE_PRODUCTS = [
         {
-            slug: 'lumiere-silk-gown',
-            name: 'Lumiere Silk Gown',
-            line: 'Lumiere',
-            price: '$2,450',
-            image: 'collection-1.jpg',
-            alt: 'Lumiere silk gown in soft evening light',
-            shortDescription: 'Bias-cut silk satin gown with hand-finished seams and a sculpted bateau neckline.',
-            description: 'The Lumiere Silk Gown is designed to move as fluidly as light. Cut on bias for natural drape, it combines restrained architecture with softness through the waist and hem.',
+            slug: 'noir-cutout-column-gown',
+            name: 'Noir Cutout Column Gown',
+            line: 'Noir Orbit',
+            price: '$2,280',
+            image: 'Dress Image.jpeg',
+            alt: 'Noir cutout column gown with long sleeves',
+            shortDescription: 'Long-sleeve column gown with square neckline and signature front cutout.',
+            description: 'A sculpted column silhouette developed for evening precision. The square neckline and circular cutout create balance between restraint and statement.',
             details: [
-                '100% silk satin sourced from Como',
-                'Hand-finished inner seams',
-                'Invisible side zip with tonal silk pull',
-                'Made in limited atelier production'
+                'Stretch satin jersey with matte finish',
+                'Extended sleeve for elongated line',
+                'Back slit for movement',
+                'Atelier-finished internal seams'
             ],
             sizeRange: 'EU 34-44',
+            availableSizes: ['34', '36', '38', '40', '42', '44'],
+            availableColors: ['Noir', 'Midnight Blue'],
             care: 'Dry clean only'
         },
         {
-            slug: 'essence-crepe-dress',
-            name: 'Essence Crepe Dress',
-            line: 'Essence',
-            price: '$1,980',
-            image: 'collection-2.jpg',
-            alt: 'Essence crepe dress with minimal tailoring',
-            shortDescription: 'Structured crepe column dress with precise darts and an open shoulder line.',
-            description: 'Essence is built around clarity of silhouette. A narrow shoulder line and uninterrupted vertical seams lengthen the body while preserving comfort and movement.',
+            slug: 'eclipse-strapless-drape-gown',
+            name: 'Eclipse Strapless Drape Gown',
+            line: 'Eclipse',
+            price: '$2,040',
+            image: 'Dress Image 2.jpeg',
+            alt: 'Eclipse strapless drape gown in black',
+            shortDescription: 'Strapless floor-length gown with gathered front drape and clean back line.',
+            description: 'Designed around fluid contouring, Eclipse combines soft front drape with a close body line for a modern black-tie profile.',
             details: [
-                'Italian viscose crepe blend',
-                'Shaped waist darts and clean back vent',
-                'Soft satin lining for comfort',
-                'Hand-pressed finish at the atelier'
+                'Silk-touch jersey with controlled stretch',
+                'Internal bust support tape',
+                'Front slit concealed within drape',
+                'Hand-pressed finish'
             ],
             sizeRange: 'EU 34-46',
+            availableSizes: ['34', '36', '38', '40', '42', '44', '46'],
+            availableColors: ['Noir', 'Midnight Blue', 'Deep Emerald'],
             care: 'Dry clean only'
         },
         {
-            slug: 'solitude-wool-coat',
-            name: 'Solitude Wool Coat',
-            line: 'Solitude',
-            price: '$2,900',
-            image: 'collection-3.jpg',
-            alt: 'Solitude wool coat with long silhouette',
-            shortDescription: 'Double-faced wool coat with elongated lapels and concealed closure.',
-            description: 'Solitude is an outer layer for quiet authority. Crafted from double-faced wool, it holds structure while remaining light on the body, ideal for transitional evenings.',
+            slug: 'obsidian-lace-mermaid-gown',
+            name: 'Obsidian Lace Mermaid Gown',
+            line: 'Obsidian',
+            price: '$3,180',
+            image: 'Dress Image 3.jpeg',
+            alt: 'Obsidian lace mermaid gown with sculpted train',
+            shortDescription: 'Mermaid gown with sheer embellished bodice and liquid-finish skirt.',
+            description: 'Obsidian is built as a couture statement: a sheer embellished bodice contrasted by a liquid drape skirt that falls into a clean train.',
             details: [
-                'Double-faced wool and cashmere blend',
-                'Concealed horn-button placket',
-                'Hand-tacked collar and lapel edge',
-                'Internal welt pocket and silk hanger loop'
-            ],
-            sizeRange: 'EU 34-44',
-            care: 'Specialist wool dry clean'
-        },
-        {
-            slug: 'atelier-evening-set',
-            name: 'Atelier Evening Set',
-            line: 'Atelier',
-            price: '$3,200',
-            image: 'hero-woman.jpg',
-            alt: 'Atelier evening set with sculpted drape',
-            shortDescription: 'Two-piece evening set pairing a sculpted top with fluid floor-length skirt.',
-            description: 'A couture-forward evening composition that balances structure and air. The top is internally boned for shape while the skirt falls in elongated pleats.',
-            details: [
-                'Silk duchesse bodice and silk georgette skirt',
-                'Internal corsetry for subtle structure',
-                'Hand-sewn hem and waist finish',
-                'Available by private appointment'
+                'Hand-applied bead embroidery',
+                'Sheer corseted body with satin trim',
+                'Bias-cut skirt with mini train',
+                'By-appointment finishing options'
             ],
             sizeRange: 'EU 34-42',
+            availableSizes: ['34', '36', '38', '40', '42'],
+            availableColors: ['Noir', 'Obsidian'],
+            care: 'Specialist couture dry clean'
+        },
+        {
+            slug: 'midnight-cowl-back-column',
+            name: 'Midnight Cowl Back Column',
+            line: 'Midnight',
+            price: '$1,960',
+            image: 'Dress Image 4.jpeg',
+            alt: 'Midnight cowl back column dress',
+            shortDescription: 'Sleeveless column dress with draped front neckline and deep cowl back.',
+            description: 'A clean architectural shape softened by draped neckline treatment at front and back, finished for all-evening comfort.',
+            details: [
+                'Satin-jersey blend with subtle sheen',
+                'Draped cowl front and low cowl back',
+                'Invisible zip closure',
+                'Hand-finished hem edge'
+            ],
+            sizeRange: 'EU 34-44',
+            availableSizes: ['34', '36', '38', '40', '42', '44'],
+            availableColors: ['Midnight', 'Noir', 'Silver Stream'],
+            care: 'Dry clean only'
+        },
+        {
+            slug: 'velvet-halter-column-gown',
+            name: 'Velvet Halter Column Gown',
+            line: 'Velvet Noir',
+            price: '$2,160',
+            image: 'Dress Image 5.jpeg',
+            alt: 'Velvet halter column gown with open back',
+            shortDescription: 'Halter column gown with sculpted bust line and open V back.',
+            description: 'Cut to contour from bust through hip, this halter column gown is designed for sharp proportion and clean evening movement.',
+            details: [
+                'Compact stretch velvet jersey',
+                'Halter neckline with structured bust seam',
+                'Open back V-line',
+                'Atelier quality-control fit pass'
+            ],
+            sizeRange: 'EU 34-44',
+            care: 'Dry clean only'
+        },
+        {
+            slug: 'noir-halter-mini-dress',
+            name: 'Noir Halter Mini Dress',
+            line: 'Noir',
+            price: '$1,420',
+            image: 'Dress Image 6.jpeg',
+            alt: 'Noir halter mini dress with deep back',
+            shortDescription: 'Halter mini silhouette with structured bust and smooth body fit.',
+            description: 'A shorter interpretation of the house halter line. Designed for close fit and clean lines with an open back for contrast.',
+            details: [
+                'Double-layer stretch crepe jersey',
+                'Structured bust cups',
+                'Open back halter construction',
+                'Micro-lock hem finish'
+            ],
+            sizeRange: 'EU 34-44',
+            availableSizes: ['34', '36', '38', '40', '42', '44'],
+            availableColors: ['Noir', 'Crimson Echo'],
+            care: 'Dry clean only'
+        },
+        {
+            slug: 'ivory-corset-sheath-dress',
+            name: 'Ivory Corset Sheath Dress',
+            line: 'Ivory Form',
+            price: '$1,840',
+            image: 'Dress Image 7.jpeg',
+            alt: 'Ivory corset sheath dress with wide straps',
+            shortDescription: 'Ivory sheath dress with corset-inspired bust and wide strap structure.',
+            description: 'A precision sheath in ivory with soft corset shaping at the bust. Built to provide structure while retaining a minimal, clean finish.',
+            details: [
+                'Weighted stretch suiting jersey',
+                'Corset-inspired stitched cup construction',
+                'Wide support straps and clean back line',
+                'Atelier pressed and finished'
+            ],
+            sizeRange: 'EU 34-46',
+            availableSizes: ['34', '36', '38', '40', '42', '44', '46'],
+            availableColors: ['Ivory', 'Soft Bone'],
             care: 'Dry clean only'
         }
     ];
