@@ -36,8 +36,8 @@
 
         if (cart.length === 0) {
             container.innerHTML = '<p style="opacity: 0.5;">Your cart is currently empty.</p>';
-            subtotalEl.textContent = '$0';
-            totalEl.textContent = '$0';
+            subtotalEl.textContent = '₹0';
+            totalEl.textContent = '₹0';
             updateNavCartCount();
             return;
         }
@@ -46,9 +46,9 @@
             const qty = item.quantity || 1;
             const priceNum = parseInt(item.price.replace(/[^0-9]/g, ''));
             const itemTotal = priceNum * qty;
-            const formattedItemTotal = new Intl.NumberFormat('en-US', {
+            const formattedItemTotal = new Intl.NumberFormat('en-IN', {
                 style: 'currency',
-                currency: 'USD',
+                currency: 'INR',
                 maximumFractionDigits: 0
             }).format(itemTotal);
 
@@ -69,9 +69,9 @@
             return sum + (price * (item.quantity || 1));
         }, 0);
 
-        const formattedTotal = new Intl.NumberFormat('en-US', {
+        const formattedTotal = new Intl.NumberFormat('en-IN', {
             style: 'currency',
-            currency: 'USD',
+            currency: 'INR',
             maximumFractionDigits: 0
         }).format(total);
 

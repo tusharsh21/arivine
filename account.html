@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIVINE — My Account</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="catalog.css">
+    <style>
+        .account-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+        }
+
+        .account-header {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .profile-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+        }
+
+        .profile-value {
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .logout-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #F8F6F1;
+            padding: 10px 25px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #F8F6F1;
+            color: #0A0A0A;
+        }
+    </style>
+</head>
+
+<body class="catalog-page">
+    <nav class="navigation">
+        <div class="nav-left">
+            <a href="index.html" class="logo-link">ARIVINE</a>
+        </div>
+        <div class="nav-right">
+            <a href="index.html#house" class="nav-link">The House</a>
+            <a href="collection.html" class="nav-link">Product Collection</a>
+            <a href="checkout.html" class="nav-link cart-link">Cart <span id="cart-count"></span></a>
+        </div>
+    </nav>
+
+    <main class="subpage-main">
+        <div class="account-container">
+            <h1 class="account-header">My Account</h1>
+
+            <div id="loading" style="opacity: 0.5;">Loading profile...</div>
+
+            <div id="profile-details" style="display: none;">
+                <div class="profile-section">
+                    <div>
+                        <p class="profile-label">Full Name</p>
+                        <p id="user-name" class="profile-value"></p>
+                    </div>
+                    <div>
+                        <p class="profile-label">Email Address</p>
+                        <p id="user-email" class="profile-value"></p>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <div>
+                        <p class="profile-label">Customer ID</p>
+                        <p id="user-id" class="profile-value" style="font-size: 0.8rem; opacity: 0.5;"></p>
+                    </div>
+                </div>
+
+                <button id="logout-btn" class="logout-btn">Log Out</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-init.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        (async function () {
+            const user = await window.ARIVINE_AUTH.getUser();
+
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('profile-details').style.display = 'block';
+
+            document.getElementById('user-name').textContent = user.user_metadata.full_name || 'Valued Customer';
+            document.getElementById('user-email').textContent = user.email;
+            document.getElementById('user-id').textContent = user.id;
+
+            document.getElementById('logout-btn').addEventListener('click', async () => {
+                await window.ARIVINE_AUTH.signOut();
+            });
+        })();
+    </script>
+</body>
+
+</html>

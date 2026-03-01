@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIVINE — Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="catalog.css">
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .auth-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .auth-form {
+            display: flex;
+            direction: column;
+            gap: 20px;
+        }
+
+        .auth-input {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #F8F6F1;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .auth-submit {
+            width: 100%;
+            padding: 15px;
+            background: #C9A961;
+            color: #0A0A0A;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .auth-submit:hover {
+            opacity: 0.8;
+        }
+
+        .auth-toggle {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: #ff4d4d;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="catalog-page">
+    <nav class="navigation">
+        <div class="nav-left">
+            <a href="index.html" class="logo-link">ARIVINE</a>
+        </div>
+    </nav>
+
+    <main class="subpage-main">
+        <div class="auth-container">
+            <h1 id="auth-header" class="auth-title">Customer Login</h1>
+            <div id="error-msg" class="error-message"></div>
+
+            <form id="auth-form" class="auth-form" style="display: flex; flex-direction: column; gap: 20px;">
+                <input type="text" id="full-name" class="auth-input" placeholder="Full Name" style="display: none;">
+                <input type="email" id="email" class="auth-input" placeholder="Email Address" required>
+                <input type="password" id="password" class="auth-input" placeholder="Password" required>
+                <button type="submit" id="submit-btn" class="auth-submit">Sign In</button>
+            </form>
+
+            <p id="toggle-mode" class="auth-toggle">Don't have an account? Sign Up</p>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-init.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        (function () {
+            let isSignUp = false;
+            const form = document.getElementById('auth-form');
+            const header = document.getElementById('auth-header');
+            const submitBtn = document.getElementById('submit-btn');
+            const toggleMode = document.getElementById('toggle-mode');
+            const nameInput = document.getElementById('full-name');
+            const errorMsg = document.getElementById('error-msg');
+
+            toggleMode.addEventListener('click', () => {
+                isSignUp = !isSignUp;
+                header.textContent = isSignUp ? 'Create Account' : 'Customer Login';
+                submitBtn.textContent = isSignUp ? 'Sign Up' : 'Sign In';
+                toggleMode.textContent = isSignUp ? 'Already have an account? Sign In' : "Don't have an account? Sign Up";
+                nameInput.style.display = isSignUp ? 'block' : 'none';
+                nameInput.required = isSignUp;
+            });
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                errorMsg.style.display = 'none';
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Processing...';
+
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const fullName = nameInput.value;
+
+                let result;
+                if (isSignUp) {
+                    result = await window.ARIVINE_AUTH.signUp(email, password, fullName);
+                } else {
+                    result = await window.ARIVINE_AUTH.signIn(email, password);
+                }
+
+                if (result.error) {
+                    errorMsg.textContent = result.error.message;
+                    errorMsg.style.display = 'block';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = isSignUp ? 'Sign Up' : 'Sign In';
+                } else {
+                    window.location.href = 'account.html';
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
